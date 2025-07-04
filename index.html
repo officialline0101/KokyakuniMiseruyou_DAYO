@@ -175,59 +175,63 @@
             transition: all 0.3s ease;
         }
 
-/* 基本スタイル */
-.info-text {
-    margin: 20px 0;
-    font-family: "Noto Sans JP", "Roboto", sans-serif;
-    font-size: 14px;
-    color: #333; /* 読みやすい濃い文字色 */
-    background-color: #f8f9fa;
-    line-height: 1.8;
-    text-align: left;
-    word-wrap: break-word;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #ced4da;
-    max-width: 800px; /* 横幅制限 */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 軽い影を追加 */
-    overflow-y: auto; /* 長文スクロール対応 */
-}
+        /* 基本スタイル */
+        .info-text {
+            margin: 20px 0;
+            font-family: "Noto Sans JP", "Roboto", sans-serif;
+            font-size: 14px;
+            color: #333;
+            /* 読みやすい濃い文字色 */
+            background-color: #f8f9fa;
+            line-height: 1.8;
+            text-align: left;
+            word-wrap: break-word;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            max-width: 800px;
+            /* 横幅制限 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* 軽い影を追加 */
+            overflow-y: auto;
+            /* 長文スクロール対応 */
+        }
 
-/* 見出しスタイル */
-.info-text h1 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
+        /* 見出しスタイル */
+        .info-text h1 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 
-.info-text h2 {
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 15px;
-    margin-bottom: 8px;
-}
+        .info-text h2 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
 
-/* 強調テキスト */
-.info-text strong {
-    color: #007bff;
-}
+        /* 強調テキスト */
+        .info-text strong {
+            color: #007bff;
+        }
 
-/* モバイル向け調整 */
-@media (max-width: 768px) {
-    .info-text {
-        font-size: 13px;
-        padding: 15px;
-        max-width: 100%;
-    }
+        /* モバイル向け調整 */
+        @media (max-width: 768px) {
+            .info-text {
+                font-size: 13px;
+                padding: 15px;
+                max-width: 100%;
+            }
 
-    .info-text h1 {
-        font-size: 16px;
-    }
+            .info-text h1 {
+                font-size: 16px;
+            }
 
-    .info-text h2 {
-        font-size: 14px;
-    }
-}
+            .info-text h2 {
+                font-size: 14px;
+            }
+        }
 
         .info-textmemo {
             margin-top: 20px;
@@ -261,95 +265,187 @@
 
 <body>
     <div class="container">
-        <h1>Andova<br>カウンセリングシート</h1>
-        <div class="info-text">以下全て入力後【アンケート送信】ボタンを押してください。</div>
-        <div class="label">どちらの店舗をご利用いただいていますか？</div>
+
+        <!-- 言語切り替えボタンを中に配置 -->
+        <div style="text-align: right; margin-bottom: 10px;">
+            <button onclick="setLanguage('ja')">日本語</button>
+            <button onclick="setLanguage('en')">English</button>
+        </div>
+        <h1 data-ja="Andova<br>カウンセリングシート" data-en="Andova<br>Counseling Sheet">Andova<br>カウンセリングシート</h1>
+
+        <div class="info-text" data-ja="以下全て入力後【アンケート送信】ボタンを押してください。"
+            data-en="Please fill out all fields and press the [Submit] button.">
+            以下全て入力後【アンケート送信】ボタンを押してください。
+        </div>
+
+        <div class="label" data-ja="どちらの店舗をご利用いただいていますか？" data-en="Which store are you visiting?">
+            どちらの店舗をご利用いただいていますか？
+        </div>
+
         <div class="store-buttons">
-            <button type="button" id="onestore" onclick="selectstore(this)">大通り店</button>
-            <button type="button" id="twostore" onclick="selectstore(this)">ピヴォクロス店</button>
+            <button type="button" id="onestore" onclick="selectstore(this)" data-ja="大通り店" data-en="Odori Branch">大通り店</button>
+            <button type="button" id="twostore" onclick="selectstore(this)" data-ja="ピヴォクロス店" data-en="PIVOT Cross Branch">ピヴォクロス店</button>
         </div>
 
-        <div class="label">ご来店日(例:西暦記載 ○年○月○日)</div>
-        <textarea id="message" rows="1" placeholder="入力してください"></textarea> <!-- メッセージ入力フィールド -->
+        <div class="label" data-ja="ご来店日(例:西暦記載 ○年○月○日)" data-en="Visit Date (e.g., YYYY/MM/DD)">
+            ご来店日(例:西暦記載 ○年○月○日)
+        </div>
+        <textarea id="message" rows="1" placeholder="入力してください" data-ja-placeholder="入力してください"
+            data-en-placeholder="Please enter"></textarea>
 
-        <div class="label">お名前(漢字フルネーム)</div>
-        <textarea id="message2" rows="1" placeholder="入力してください"></textarea> <!-- メッセージ入力フィールド -->
+        <div class="label" data-ja="お名前(漢字フルネーム)" data-en="Full Name">
+            お名前(漢字フルネーム)
+        </div>
+        <textarea id="message2" rows="1" placeholder="入力してください" data-ja-placeholder="入力してください"
+            data-en-placeholder="Please enter"></textarea>
 
-        <div class="label">お名前(ふりがな)</div>
-        <textarea id="message6" rows="1" placeholder="入力してください"></textarea> <!-- メッセージ入力フィールド -->
+        <div class="label" data-ja="お名前(ふりがな)" data-en="">
+            お名前(ふりがな)
+        </div>
+        <textarea id="message6" rows="1" placeholder="入力してください" data-ja-placeholder="入力してください"
+            data-en-placeholder="Please enter"></textarea>
 
-        <div class="label">生年月日(例:西暦記載 ○年○月○日)</div>
-        <textarea id="message3" rows="1" placeholder="入力してください"></textarea> <!-- メッセージ入力フィールド -->
+        <div class="label" data-ja="生年月日(例:西暦記載 ○年○月○日)" data-en="Date of Birth (e.g., YYYY/MM/DD)">
+            生年月日(例:西暦記載 ○年○月○日)
+        </div>
+        <textarea id="message3" rows="1" placeholder="入力してください" data-ja-placeholder="入力してください"
+            data-en-placeholder="Please enter"></textarea>
 
-        <div class="label">電話番号</div>
-        <textarea id="message4" rows="1" placeholder="入力してください"></textarea> <!-- メッセージ入力フィールド -->
+        <div class="label" data-ja="電話番号" data-en="Phone Number">電話番号</div>
+        <textarea id="message4" rows="1" placeholder="入力してください" data-ja-placeholder="入力してください"
+            data-en-placeholder="Please enter"></textarea>
 
-        <div class="label">お住まい(都道府県/市区町村まで)</div>
-        <textarea id="message5" rows="1" placeholder="入力してください"></textarea> <!-- メッセージ入力フィールド -->
+        <div class="label" data-ja="お住まい(都道府県/市区町村まで)" data-en="Address (Prefecture/City)">
+            お住まい(都道府県/市区町村まで)
+        </div>
+        <textarea id="message5" rows="1" placeholder="入力してください" data-ja-placeholder="入力してください"
+            data-en-placeholder="Please enter"></textarea>
 
-        <div class="label">ご職業</div>
+        <div class="label" data-ja="ご職業" data-en="Occupation">ご職業</div>
         <div class="priority-buttons">
-            <button type="button" id="onepriority" onclick="selectpriority(this)"> 会社員（職業）</button>
-            <button type="button" id="twopriority" onclick="selectpriority(this)">パート・アルバイト（職業）</button>
-            <button type="button" id="threepriority" onclick="selectpriority(this)">学生（職業）</button>
-            <button type="button" id="fourpriority" onclick="selectpriority(this)">専業主婦（職業）</button>
-            <button type="button" id="fivepriority" onclick="selectpriority(this)">その他（職業）</button>
+            <button type="button" id="onepriority" onclick="selectpriority(this)" data-ja="会社員（職業）"
+                data-en="Company Employee">会社員（職業）</button>
+            <button type="button" id="twopriority" onclick="selectpriority(this)" data-ja="パート・アルバイト（職業）"
+                data-en="Part-time / Casual Worker">パート・アルバイト（職業）</button>
+            <button type="button" id="threepriority" onclick="selectpriority(this)" data-ja="学生（職業）"
+                data-en="Student">学生（職業）</button>
+            <button type="button" id="fourpriority" onclick="selectpriority(this)" data-ja="専業主婦（職業）"
+                data-en="Homemaker">専業主婦（職業）</button>
+            <button type="button" id="fivepriority" onclick="selectpriority(this)" data-ja="その他（職業）"
+                data-en="Other">その他（職業）</button>
         </div>
 
-        <div class="label">来店動機</div>
+        <div class="label" data-ja="来店動機" data-en="Reason for Visit">来店動機</div>
         <div class="demand-buttons">
-            <button type="button" id="onedemand" onclick="selectdemand(this)">HP（来店動機）</button>
-            <button type="button" id="twodemand" onclick="selectdemand(this)"> Instagram（来店動機）</button>
-            <button type="button" id="threedemand" onclick="selectdemand(this)">Google等での検索（来店動機）</button>
-            <button type="button" id="fourdemand" onclick="selectdemand(this)">ホットペッパービューティー（来店動機）</button>
-            <button type="button" id="fivedemand" onclick="selectdemand(this)">知人の紹介（来店動機）</button>
-            <button type="button" id="sixdemand" onclick="selectdemand(this)">通りすがり（来店動機）</button>
-            <button type="button" id="sevemdemand" onclick="selectdemand(this)">その他（来店動機）</button>
+            <button type="button" id="onedemand" onclick="selectdemand(this)" data-ja="HP（来店動機）"
+                data-en="Website (Reason for Visit)">HP（来店動機）</button>
+            <button type="button" id="twodemand" onclick="selectdemand(this)" data-ja="Instagram（来店動機）"
+                data-en="Instagram (Reason for Visit)">Instagram（来店動機）</button>
+            <button type="button" id="threedemand" onclick="selectdemand(this)" data-ja="Google等での検索（来店動機）"
+                data-en="Google Search (Reason for Visit)">Google等での検索（来店動機）</button>
+            <button type="button" id="fourdemand" onclick="selectdemand(this)" data-ja="ホットペッパービューティー（来店動機）"
+                data-en="Hot Pepper Beauty (Reason for Visit)">ホットペッパービューティー（来店動機）</button>
+            <button type="button" id="fivedemand" onclick="selectdemand(this)" data-ja="知人の紹介（来店動機）"
+                data-en="Referred by Friend (Reason for Visit)">知人の紹介（来店動機）</button>
+            <button type="button" id="sixdemand" onclick="selectdemand(this)" data-ja="通りすがり（来店動機）"
+                data-en="Walk-in (Reason for Visit)">通りすがり（来店動機）</button>
+            <button type="button" id="sevemdemand" onclick="selectdemand(this)" data-ja="その他（来店動機）"
+                data-en="Other (Reason for Visit)">その他（来店動機）</button>
         </div>
 
-        <div class="label">"知人の紹介"を選択された方は、<br>紹介者のお名前をご記入ください。</div>
-        <textarea id="message7" rows="1" placeholder="入力してください"></textarea> <!-- メッセージ入力フィールド -->
+        <div class="label" data-ja="知人の紹介を選択された方は、紹介者のお名前をご記入ください。"
+            data-en='If "Referred by Friend" was selected, please write the referrer' s name.'>
+            "知人の紹介"を選択された方は、<br>紹介者のお名前をご記入ください。
+        </div>
+        <textarea id="message7" rows="1" placeholder="入力してください" data-ja-placeholder="入力してください"
+            data-en-placeholder="Please enter"></textarea>
 
-        <div class="label">来店頻度<br>(ネイルサロンにどのくらいの頻度で通っているか)</div>
+        <div class="label" data-ja="来店頻度" data-en="Visit Frequency">来店頻度<br>(ネイルサロンにどのくらいの頻度で通っているか)</div>
         <div class="chance-buttons">
-            <button type="button" id="onechance" onclick="selectchance(this)">2週間に1度(頻度)</button>
-            <button type="button" id="twochance" onclick="selectchance(this)">3週間に1度(頻度)</button>
-            <button type="button" id="threechance" onclick="selectchance(this)">1ヵ月に1度(頻度) </button>
-            <button type="button" id="fourchance" onclick="selectchance(this)">2〜3カ月に1度(頻度)</button>
+            <button type="button" id="onechance" onclick="selectchance(this)" data-ja="2週間に1度(頻度)"
+                data-en="Every 2 weeks">2週間に1度(頻度)</button>
+            <button type="button" id="twochance" onclick="selectchance(this)" data-ja="3週間に1度(頻度)"
+                data-en="Every 3 weeks">3週間に1度(頻度)</button>
+            <button type="button" id="threechance" onclick="selectchance(this)" data-ja="1ヵ月に1度(頻度)"
+                data-en="Once a month">1ヵ月に1度(頻度)</button>
+            <button type="button" id="fourchance" onclick="selectchance(this)" data-ja="2〜3カ月に1度(頻度)"
+                data-en="Every 2–3 months">2〜3カ月に1度(頻度)</button>
         </div>
 
-        <div class="label">過去施術<br>(過去にサロンで受けたことがある施術)</div>
+        <div class="label" data-ja="過去施術" data-en="Previous Treatments">過去施術<br>(過去にサロンで受けたことがある施術)</div>
         <div class="Introduction-buttons">
-            <button type="button" id="oneIntroduction" onclick="selectIntroduction(this)">ネイルサロンに初めて来た(過去施術)</button>
-            <button type="button" id="twoIntroduction" onclick="selectIntroduction(this)">ケア(過去施術) </button>
-            <button type="button" id="threeIntroduction" onclick="selectIntroduction(this)">カラーリング(過去施術)</button>
-            <button type="button" id="fourIntroduction" onclick="selectIntroduction(this)">スカルプチャー(過去施術) </button>
-            <button type="button" id="fiveIntroduction" onclick="selectIntroduction(this)">ジェルネイル(過去施術) </button>
-            <button type="button" id="sixIntroduction" onclick="selectIntroduction(this)">フット(過去施術) </button>
-            <button type="button" id="sevenIntroduction" onclick="selectIntroduction(this)">その他(過去施術) </button>
+            <button type="button" id="oneIntroduction" onclick="selectIntroduction(this)" data-ja="ネイルサロンに初めて来た(過去施術)"
+                data-en="First time at a nail salon">ネイルサロンに初めて来た(過去施術)</button>
+            <button type="button" id="twoIntroduction" onclick="selectIntroduction(this)" data-ja="ケア(過去施術)"
+                data-en="Care">ケア(過去施術)</button>
+            <button type="button" id="threeIntroduction" onclick="selectIntroduction(this)" data-ja="カラーリング(過去施術)"
+                data-en="Coloring">カラーリング(過去施術)</button>
+            <button type="button" id="fourIntroduction" onclick="selectIntroduction(this)" data-ja="スカルプチャー(過去施術)"
+                data-en="Sculpture">スカルプチャー(過去施術)</button>
+            <button type="button" id="fiveIntroduction" onclick="selectIntroduction(this)" data-ja="ジェルネイル(過去施術)"
+                data-en="Gel nails">ジェルネイル(過去施術)</button>
+            <button type="button" id="sixIntroduction" onclick="selectIntroduction(this)" data-ja="フット(過去施術)"
+                data-en="Foot treatment">フット(過去施術)</button>
+            <button type="button" id="sevenIntroduction" onclick="selectIntroduction(this)" data-ja="その他(過去施術)"
+                data-en="Other">その他(過去施術)</button>
         </div>
 
-        <div class="label">薬品/ネイルでのアレルギー</div>
+        <div class="label" data-ja="薬品/ネイルでのアレルギー" data-en="Allergies to Products/Nail">薬品/ネイルでのアレルギー</div>
         <div class="delivery-buttons">
-            <button type="button" id="onedelivery" onclick="selectdelivery(this)">薬品アレルギー有り</button>
-            <button type="button" id="twodelivery" onclick="selectdelivery(this)">薬品アレルギー無し</button>
+            <button type="button" id="onedelivery" onclick="selectdelivery(this)" data-ja="薬品アレルギー有り"
+                data-en="Yes (has allergies)">薬品アレルギー有り</button>
+            <button type="button" id="twodelivery" onclick="selectdelivery(this)" data-ja="薬品アレルギー無し"
+                data-en="No (no allergies)">薬品アレルギー無し</button>
         </div>
 
-        <div class="label">現在補強または長さ出ししている箇所がある方は、<br>左右それぞれの本数をご記入ください。<br>(分かる範囲で結構です)</div>
-        <textarea id="message8" rows="1" placeholder="入力してください"></textarea> <!-- メッセージ入力フィールド -->
+        <div class="label" data-ja="現在補強または長さ出ししている箇所がある方は、左右それぞれの本数をご記入ください。(分かる範囲で結構です)"
+            data-en="If you have reinforcement or extensions, please note the number on each hand (as far as you know).">
+            現在補強または長さ出ししている箇所がある方は、<br>左右それぞれの本数をご記入ください。<br>(分かる範囲で結構です)
+        </div>
+        <textarea id="message8" rows="1" placeholder="入力してください" data-ja-placeholder="入力してください"
+            data-en-placeholder="Please enter"></textarea>
 
-        <div class="label">重要項目の同意</div>
-        <div class="info-text">①トークでのご予約の受付・変更・キャンセルについては承っておりません。全てTELにてお願いいたします😊✨ 
-            <br><br>②当店では施術後の返金対応は致しかねます。気になる箇所がございましたら、お直しは施術後１週間以内のご来店ですと無料(※１週間超えてのご来店ですと本数分計算の有料)で承っておりますのでお気軽にご相談ください。<br>お問い合わせに関しましては、トークに詳細と合わせ状態のお写真なども添えていただけるとスムーズなやり取りとご案内ができます。<br>また、TELでも承っており、その場でのご案内が可能です。
-            <br>※トークの場合、施術対応中などでご返信が遅くなることがございます。
-            <br><br>③お持ち込みネイルのお問い合わせに関しましては、リピーター様のみ受付ており、全てこちらのLINEにてご対応させて頂きます。 ご予約される前にこちらのLINEに持ち込みデザイン画像とご要望の送信をお願い致します。持ち込みデザインについてのご相談をさせていただきます。また、施術にかかるお時間、料金、ご予約時選択するメニュー等なども合わせてご連絡させていただきます。 
-            <br><br>④LINEお問い合わせのご対応時間について 営業時間中の10:00〜20:00とさせていただきます。 それ以外の時間のご返信は致しかねますことご了承を願います。 また、営業時間中につきましても施術対応中などにより返信が遅くなる場合がありますことも重ねてご了承を願います。</div>
+        <div class="label" data-ja="重要項目の同意" data-en="Agreement to Important Items">重要項目の同意</div>
+        <div class="info-text" data-ja="①トークでのご予約の受付・変更・キャンセルについては承っておりません。全てTELにてお願いいたします😊✨ 
+②当店では施術後の返金対応は致しかねます。気になる箇所がございましたら、お直しは施術後１週間以内のご来店ですと無料(※１週間超えてのご来店ですと本数分計算の有料)で承っておりますのでお気軽にご相談ください。
+お問い合わせに関しましては、トークに詳細と合わせ状態のお写真なども添えていただけるとスムーズなやり取りとご案内ができます。
+また、TELでも承っており、その場でのご案内が可能です。
+※トークの場合、施術対応中などでご返信が遅くなることがございます。
+③お持ち込みネイルのお問い合わせに関しましては、リピーター様のみ受付ており、全てこちらのLINEにてご対応させて頂きます。 
+ご予約される前にこちらのLINEに持ち込みデザイン画像とご要望の送信をお願い致します。持ち込みデザインについてのご相談をさせていただきます。
+また、施術にかかるお時間、料金、ご予約時選択するメニュー等なども合わせてご連絡させていただきます。
+④LINEお問い合わせのご対応時間について 営業時間中の10:00〜20:00とさせていただきます。 
+それ以外の時間のご返信は致しかねますことご了承を願います。 
+また、営業時間中につきましても施術対応中などにより返信が遅くなる場合がありますことも重ねてご了承を願います。"
+            data-en="① We do not accept reservations, changes, or cancellations via LINE chat. Please make all such requests by phone. 📞✨<br>
+② We do not offer refunds after treatments. If you have any concerns, we will make adjustments free of charge if you visit within one week of your appointment. After one week, fees will apply based on the number of corrections. 
+For inquiries, it helps to send detailed information and photos via chat so we can respond smoothly. 
+We also accept inquiries by phone and can provide immediate assistance. 
+*Please note that responses via chat may be delayed during treatments.<br>
+
+③ We only accept inquiries regarding custom nail designs from repeat clients via LINE. 
+Before making a reservation, please send us your design image and specific requests via this LINE. 
+We will discuss the details with you and inform you about the required time, price, and which menu to select when booking.<br>
+
+④ Our LINE inquiry response hours are from 10:00 to 20:00 during business hours. 
+Please understand that we cannot respond outside of these hours. 
+Even during business hours, replies may be delayed while we are assisting other clients. Thank you for your understanding.">
+            ①トークでのご予約の受付・変更・キャンセルについては承っておりません。全てTELにてお願いいたします😊✨
+            <br><br>②当店では施術後の返金対応は致しかねます。気になる箇所がございましたら、お直しは施術後１週間以内のご来店ですと無料(※１週間超えてのご来店ですと本数分計算の有料)で承っておりますのでお気軽にご相談ください。<br>お問い合わせに関しましては、トークに詳細と合わせ状態のお写真なども添えていただけるとスムーズなやり取りとご案内ができます。<br>また、TELでも承っており、その場でのご案内が可能です。<br>※トークの場合、施術対応中などでご返信が遅くなることがございます。
+            <br><br>③お持ち込みネイルのお問い合わせに関しましては、リピーター様のみ受付ており、全てこちらのLINEにてご対応させて頂きます。
+            ご予約される前にこちらのLINEに持ち込みデザイン画像とご要望の送信をお願い致します。持ち込みデザインについてのご相談をさせていただきます。また、施術にかかるお時間、料金、ご予約時選択するメニュー等なども合わせてご連絡させていただきます。
+            <br><br>④LINEお問い合わせのご対応時間について 営業時間中の10:00〜20:00とさせていただきます。 それ以外の時間のご返信は致しかねますことご了承を願います。
+            また、営業時間中につきましても施術対応中などにより返信が遅くなる場合がありますことも重ねてご了承を願います。
+        </div>
         <div class="budgety-buttons">
-            <button type="button" id="onebudgety" onclick="selectbudgety(this)">同意する</button>
-            <button type="button" id="twobudgety" onclick="selectbudgety(this)">同意しない</button>
+            <button type="button" id="onebudgety" onclick="selectbudgety(this)" data-ja="同意する"
+                data-en="Agree">同意する</button>
+            <button type="button" id="twobudgety" onclick="selectbudgety(this)" data-ja="同意しない"
+                data-en="Disagree">同意しない</button>
         </div>
 
-        <button class="submit-button" onclick="submitForm()">カウンセリングシート送信</button> <!-- フォーム送信ボタン -->
+        <button class="submit-button" onclick="submitForm()" data-ja="カウンセリングシート送信"
+            data-en="Submit Counseling Sheet">カウンセリングシート送信</button>
     </div>
 
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script> <!-- LIFF SDKの読み込み -->
@@ -386,6 +482,12 @@
             if (!input.value) {
                 document.getElementById(placeholderId).style.display = 'inline';
             }
+        }
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-ja]').forEach(el => {
+                el.innerHTML = el.dataset[lang];
+            });
         }
 
         function selectstore(element) {
@@ -475,6 +577,9 @@
             deliveryCount: deliveryCount;
             budgetyCount: budgetyCount;
 
+    // data-ja取得
+    const submitButtonText = document.querySelector('.submit-button').getAttribute('data-ja');
+
             const formData = {
                 message,
                 message2,
@@ -493,11 +598,11 @@
                 budgetyCount,
             };
 
-    // 「同意しない」が選択されていたら警告を表示して中止
-    if (budgetyCount === "同意しない") {
-        alert('"同意する"を選択されていない場合、送信することができません');
-        return;
-    }
+            // 「同意しない」が選択されていたら警告を表示して中止
+            if (budgetyCount === "同意しない") {
+                alert('"同意する"を選択されていない場合、送信することができません');
+                return;
+            }
 
             // フォームデータのチェック
             if (!formData.message) {
@@ -508,12 +613,6 @@
             // フォームデータのチェック
             if (!formData.message2) {
                 alert('お名前(漢字フルネーム)を入力してください。');
-                return;
-            }
-
-            // フォームデータのチェック
-            if (!formData.message6) {
-                alert('お名前(ふりがな)を入力してください。');
                 return;
             }
 

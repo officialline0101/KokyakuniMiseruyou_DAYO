@@ -957,6 +957,80 @@
                 /* パディング含めて横一杯に */
             }
         }
+
+        .treatment-container {
+            text-align: center;
+            padding: 10px;
+            background-color: #ffffff;
+            color: #333;
+            border-radius: 8px;
+            border: 1px solid #ff8ca7;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            max-width: 350px;
+            margin: auto;
+        }
+
+        .treatment-image {
+            text-align: center;
+            margin-top: 15px;
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            height: 180px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #ff8ca7;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 15px auto;
+        }
+
+        .treatment-description {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #fafafa;
+            color: #555;
+            border-radius: 8px;
+            border: 1px solid #ff8ca7;
+            font-size: 14px;
+            line-height: 1.5;
+            text-align: left;
+            max-width: 350px;
+            margin: 15px auto;
+        }
+
+        .treatment-price {
+            margin-top: 15px;
+            padding: 10px;
+            background: #fff;
+            color: #333;
+            border-radius: 8px;
+            border: 1px solid #ff8ca7;
+            font-weight: bold;
+            font-size: 15px;
+            text-align: right;
+            max-width: 350px;
+            margin: 15px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+        .spinner-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .title {
+            font-size: 24px;
+            color: #4A4A4A;
+            text-align: center;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
     </style>
 </head>
 
@@ -1331,36 +1405,116 @@
             // カレンダーを更新するために取得する日付を渡す
             fetchAvailability(currentDate);
 
-            if (treatmentId === 'treatment14') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：60分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：5,500円税抜</strong></div>`;
-            } else if (treatmentId === 'treatment24') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：90分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：8,000円税抜</strong></div>`;
-            } else if (treatmentId === 'treatment34') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：120分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：11,500円税抜</strong></div>`;
-            } else if (treatmentId === 'treatment44') {
-                treatmentText.innerHTML = ``;
-            } else if (treatmentId === 'treatment54') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：60分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：4,800円〜</strong></div>`;
-            } else if (treatmentId === 'treatment64') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：30分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：7,500円〜</strong></div>`;
-            } else if (treatmentId === 'treatment74') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：10分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：1500円税抜</strong></div>`;
-            } else if (treatmentId === 'treatment84') {
-                treatmentText.innerHTML = ``;
-            } else if (treatmentId === 'treatment94') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：15分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：4,800円〜</strong></div>`;
-            } else if (treatmentId === 'treatment104') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：90分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：7,500円〜</strong></div>`;
-            } else if (treatmentId === 'treatment114') {
-                treatmentText.innerHTML = ``;
-            } else if (treatmentId === 'treatment124') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：30分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：4,000円税抜</strong></div>`;
-            } else if (treatmentId === 'treatment134') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：60分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：6,500円税抜</strong></div>`;
-            } else if (treatmentId === 'treatment144') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：90分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：10,000円税抜</strong></div>`;
-            } else if (treatmentId === 'treatment15') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：10分</strong><br>※症状によりお時間が前後する場合がございます</div><div style="text-align: right;"><strong>料金：1500円税抜</strong></div>`;
+            function createTreatmentContent(title, imageUrl, description, price, time) {
+                return `
+        <div class="treatment-container">
+            <div style="font-size: 18px; font-weight: bold;">${title}</div>
+        </div>
+
+        <div class="treatment-image">
+            <div class="spinner-overlay">
+                <div class="spinner"></div>
+            </div>
+            <img src="${imageUrl}" alt="${title}" style="width: 100%; height: 100%; display: none;" 
+                 onload="this.style.display='block'; this.previousElementSibling.style.display='none';">
+        </div>
+
+        <div class="treatment-description">${description}</div>
+
+        <div class="treatment-price">
+            <span>価格：</span><span>${price}</span><br>
+            <span>所要時間：</span><span>${time}</span>
+        </div>`;
+            }
+
+            if (treatmentId === 'treatment1') {
+                treatmentText.innerHTML = createTreatmentContent(
+                    'ハリウッドブロウリフト（HBL）',
+                    'https://www.dropbox.com/scl/fi/k0stpqbl53q7ttm46iznw/HBL.png?rlkey=whnz03jog6863gqligzdi4z1h&st=ui5tu3yy&raw=1',
+                    '眉毛を自由自在に操り<br>お顔の80%の印象、額縁とも言われる｢眉毛｣!!<br>眉毛を整える時代、一気に印象が変わります!',
+                    '￥7,000',
+                    '120分'
+                );
+            } else if (treatmentId === 'treatment29') {
+                treatmentText.innerHTML = createTreatmentContent(
+                    '眉デザインWAX',
+                    'https://www.dropbox.com/scl/fi/u0qmgv2p4qzq5clqmyxxa/WAX.png?rlkey=amcpmgn97gk6or1z9oajjzxli&st=bggi2934&raw=1',
+                    '顔の黄金比、パーツ、バランスに合わせ、お客様に似合う眉をデザインし、整えWAXで仕上げていきます。',
+                    '￥5,500',
+                    '90分'
+                );
+            } else if (treatmentId === 'treatment39') {
+                treatmentText.innerHTML = createTreatmentContent(
+                    'セルマン-ツヤ玉トリートメント-',
+                    'https://www.dropbox.com/scl/fi/0hh1hubilxjskjv22mjsl/.png?rlkey=b2gixeqi7f4k6pi1xh3n4ifxu&st=75tn2cqp&raw=1',
+                    '美容大国｢韓国｣発祥、スキンケアSERMDNT<br>古い角質を一気に取り除き、お肌の土台から整えあなた本来の輝くお肌へ!!',
+                    '￥22,000',
+                    '120分'
+                );
+            } else if (treatmentId === 'treatment49') {
+                treatmentText.innerHTML = createTreatmentContent(
+                    'フェイシャルWAX',
+                    'https://www.dropbox.com/scl/fi/ev7lfsoyo9dzu04perl96/WAX.png?rlkey=7s1qx1dny5326i2mgr3teq52b&st=qe9jyuaa&raw=1',
+                    'お肌の表面の古い角質、ふわふわ産毛を毛根からキレイに✨<br>お肌がトーンUPしつや肌に<br>部分パーツWAX対応可能',
+                    '￥7,500',
+                    '90分'
+                );
+            } else if (treatmentId === 'treatment59') {
+                treatmentText.innerHTML = createTreatmentContent(
+                    'クイックコース 30分',
+                    'https://www.dropbox.com/scl/fi/9sq7tsl9ll7m389kdsuyp/.png?rlkey=vvpj3nwodlcxd7vk9m5tgu8cl&st=sqkaihf1&raw=1',
+                    '身体がお疲れにはこちら!!足先から全身を調整します。',
+                    '￥3,500',
+                    '30分'
+                );
+            } else if (treatmentId === 'treatment69') {
+                treatmentText.innerHTML = createTreatmentContent(
+                    '全身コース',
+                    'https://www.dropbox.com/scl/fi/9sq7tsl9ll7m389kdsuyp/.png?rlkey=vvpj3nwodlcxd7vk9m5tgu8cl&st=sqkaihf1&raw=1',
+                    '身体がお疲れにはこちら!!足先から全身を調整します。',
+                    '￥6,600',
+                    '60分'
+                );
+            } else if (treatmentId === 'treatment97') {
+                treatmentText.innerHTML = createTreatmentContent(
+                    'デフォルトコース',
+                    'https://www.dropbox.com/scl/fi/mobieph7imx5zf62g1kjz/.png?rlkey=es3o3x6e1lh2lh4dp5i182pp5&st=nx6x5uhj&raw=1',
+                    '小顔になりたい、頭痛、眠れない、<br>ブライダルやイベントまで体をスッキリさせたいとお悩みの方に！！',
+                    '￥11,000~',
+                    '60分'
+                );
+            } else if (treatmentId === 'treatment89') {
+                treatmentText.innerHTML = createTreatmentContent(
+                    'オイルコース',
+                    'https://www.dropbox.com/scl/fi/mobieph7imx5zf62g1kjz/.png?rlkey=es3o3x6e1lh2lh4dp5i182pp5&st=nx6x5uhj&raw=1',
+                    '小顔になりたい、頭痛、眠れない、<br>ブライダルやイベントまで体をスッキリさせたいとお悩みの方に！！',
+                    '￥11,000~',
+                    '90分'
+                );
+            } else if (treatmentId === 'treatment99') {
+                treatmentText.innerHTML = createTreatmentContent(
+                    'よもぎ蒸し',
+                    'https://www.dropbox.com/scl/fi/317fex5nvn4l8se74jjd5/.png?rlkey=zc1irgbsuss0e3ewzu7r0p4ir&st=vpac9o0g&raw=1',
+                    'デトックス＆リフレッシュ!!<br>冷え、肩こり、体の不調を感じている方に、身体が温まりぽかぽか心地いい♡',
+                    '￥3,500~',
+                    '30分'
+                );
+            } else if (treatmentId === 'treatment109') {
+                treatmentText.innerHTML = createTreatmentContent(
+                    'よもぎ蒸し',
+                    'https://www.dropbox.com/scl/fi/317fex5nvn4l8se74jjd5/.png?rlkey=zc1irgbsuss0e3ewzu7r0p4ir&st=vpac9o0g&raw=1',
+                    'デトックス＆リフレッシュ!!<br>冷え、肩こり、体の不調を感じている方に、身体が温まりぽかぽか心地いい♡',
+                    '￥3,500~',
+                    '50分'
+                );
+            } else if (treatmentId === 'treatment119') {
+                treatmentText.innerHTML = createTreatmentContent(
+                    '顔タイプ診断',
+                    'https://www.dropbox.com/scl/fi/7pmkc1vq5usp2lygf3b3h/.png?rlkey=b3ta3r6qpqfc9f3qiom78jkie&st=kd19l196&raw=1',
+                    'AIでは判断できない、自分の似合うファッションやヘアスタイルを知り、魅力的に輝くあなたへ💖<br>お洋服選びが楽しくなる✨',
+                    '￥9,000',
+                    '120分'
+                );
             } else {
                 treatmentText.innerHTML = '';
             }

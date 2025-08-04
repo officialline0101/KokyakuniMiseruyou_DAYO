@@ -1075,9 +1075,9 @@
                 <span class="highlight-text">◆整体メニュー◆</span>
             </div>
             <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this, 'treatment1')" data-category="整体メニュー" data-price="15000">人気No.3【初回】ショートコース(30分)</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment2')" data-category="整体メニュー" data-price="15000">人気No.1【初回】通常コース(60分)</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment3')" data-category="整体メニュー" data-price="15000">人気No.2【初回】ロングコース(90分)</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment1')" data-category="整体メニュー" data-price="15000">人気No.1【初回】通常コース(60分)</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment2')" data-category="整体メニュー" data-price="15000">人気No.2【初回】ロングコース(90分)</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment3')" data-category="整体メニュー" data-price="15000">人気No.3【初回】ショートコース(30分)</button>
                 <button type="button" onclick="selectSymptom(this, 'treatment4')" data-category="整体メニュー" data-price="15000">部分可視光線治療1照射(10分)</button>
                 <button type="button" onclick="selectSymptom(this, 'treatment5')" data-category="整体メニュー" data-price="15000">全身同時6照射(30分)</button>
             </div>
@@ -1429,91 +1429,67 @@
 
             if (treatmentId === 'treatment1') {
                 treatmentText.innerHTML = createTreatmentContent(
-                    'ハリウッドブロウリフト（HBL）',
-                    'https://www.dropbox.com/scl/fi/k0stpqbl53q7ttm46iznw/HBL.png?rlkey=whnz03jog6863gqligzdi4z1h&st=ui5tu3yy&raw=1',
-                    '眉毛を自由自在に操り<br>お顔の80%の印象、額縁とも言われる｢眉毛｣!!<br>眉毛を整える時代、一気に印象が変わります!',
-                    '￥7,000',
-                    '120分'
+                    '人気No.1【初回】通常コース(60分)',
+                    'https://www.dropbox.com/scl/fi/71qbof50y32ex4rd8figk/sdasds.png?rlkey=w2sgkxbr7oyt08s03b0xuxfmy&st=hvpfcczc&raw=1',
+                    '《25年以上の経験と実績》首腰のツラさはその日のうちに解消！他院ない施術に電気機器・可視光線療法を組み合わせた独自療法で回復★※初回はカウンセリング込み検査アドバイスに30分プラスです',
+                    '￥6,500円～',
+                    '60分'
                 );
-            } else if (treatmentId === 'treatment29') {
+            } else if (treatmentId === 'treatment2') {
                 treatmentText.innerHTML = createTreatmentContent(
-                    '眉デザインWAX',
-                    'https://www.dropbox.com/scl/fi/u0qmgv2p4qzq5clqmyxxa/WAX.png?rlkey=amcpmgn97gk6or1z9oajjzxli&st=bggi2934&raw=1',
-                    '顔の黄金比、パーツ、バランスに合わせ、お客様に似合う眉をデザインし、整えWAXで仕上げていきます。',
-                    '￥5,500',
+                    '人気No.2【初回】ロングコース(90分)',
+                    'https://www.dropbox.com/scl/fi/qkbaj0uslc2ydatejpo5a/dsczxc.png?rlkey=jvq3f2s24q5igee1t8z15oc41&st=yp7hw1bj&raw=1',
+                    '《25年以上の確かな実績を積んだ整体》首肩のツラさはその日のうちに解消！他院にはない施術と電気療法機器の使用・可視光線療法を組み合わせた独自療法で回復★',
+                    '￥10,000円～',
                     '90分'
                 );
-            } else if (treatmentId === 'treatment39') {
+            } else if (treatmentId === 'treatment3') {
                 treatmentText.innerHTML = createTreatmentContent(
-                    'セルマン-ツヤ玉トリートメント-',
-                    'https://www.dropbox.com/scl/fi/0hh1hubilxjskjv22mjsl/.png?rlkey=b2gixeqi7f4k6pi1xh3n4ifxu&st=75tn2cqp&raw=1',
-                    '美容大国｢韓国｣発祥、スキンケアSERMDNT<br>古い角質を一気に取り除き、お肌の土台から整えあなた本来の輝くお肌へ!!',
-                    '￥22,000',
-                    '120分'
+                    '人気No.3【初回】ショートコース(30分)',
+                    'https://www.dropbox.com/scl/fi/btv555nn5ozw7mt5ujm4v/xzdwwad.png?rlkey=i7jyx8jr9r3pr2jzjxroi0it0&st=p0b9a31n&raw=1',
+                    '《短時間でも効果出せます》首腰各部位の悩みに合わせた施術！電気機器・可視光線療法を組み合わせた独自療法で回復★※初回はカウンセリング、検査、アドバイス付き30分プラスです。',
+                    '￥4,000円～',
+                    '30分'
                 );
-            } else if (treatmentId === 'treatment49') {
+            } else if (treatmentId === 'treatment4') {
                 treatmentText.innerHTML = createTreatmentContent(
-                    'フェイシャルWAX',
-                    'https://www.dropbox.com/scl/fi/ev7lfsoyo9dzu04perl96/WAX.png?rlkey=7s1qx1dny5326i2mgr3teq52b&st=qe9jyuaa&raw=1',
-                    'お肌の表面の古い角質、ふわふわ産毛を毛根からキレイに✨<br>お肌がトーンUPしつや肌に<br>部分パーツWAX対応可能',
+                    '部分可視光線治療1照射(10分)',
+                    'https://www.dropbox.com/scl/fi/05hcbun6yu76rza0zer12/U74DgkZ2muGYKSo7vTFqfDpdcdU5IqMdgaXQVekhY_9mhUFSKSTqJ0UXpblbO8jJxD5xSXLTT8xHLXnd07htff-Kb2FEMEQSFgyO2Q0yJHLReWY0NUrpGg4n8kFpKMG6Q0mGTKiMiK02azDH-NEk1Q.jpg?rlkey=f7tpksv3kupdfdeeabzuy1p7m&st=go484jt6&raw=1',
+                    '身体がお疲れにはこちら!!',
                     '￥7,500',
                     '90分'
                 );
-            } else if (treatmentId === 'treatment59') {
+            } else if (treatmentId === 'treatment5') {
                 treatmentText.innerHTML = createTreatmentContent(
-                    'クイックコース 30分',
-                    'https://www.dropbox.com/scl/fi/9sq7tsl9ll7m389kdsuyp/.png?rlkey=vvpj3nwodlcxd7vk9m5tgu8cl&st=sqkaihf1&raw=1',
+                    '全身同時6照射(30分)',
+                    'https://www.dropbox.com/scl/fi/r7avmzxfgfwq4myqua0lt/dffdsfs.png?rlkey=fzl9868strc98vi3vrcqxj5ps&st=b4qcjw6l&raw=1',
                     '身体がお疲れにはこちら!!足先から全身を調整します。',
                     '￥3,500',
                     '30分'
                 );
-            } else if (treatmentId === 'treatment69') {
+            } else if (treatmentId === 'treatment6') {
                 treatmentText.innerHTML = createTreatmentContent(
-                    '全身コース',
-                    'https://www.dropbox.com/scl/fi/9sq7tsl9ll7m389kdsuyp/.png?rlkey=vvpj3nwodlcxd7vk9m5tgu8cl&st=sqkaihf1&raw=1',
-                    '身体がお疲れにはこちら!!足先から全身を調整します。',
-                    '￥6,600',
-                    '60分'
-                );
-            } else if (treatmentId === 'treatment97') {
-                treatmentText.innerHTML = createTreatmentContent(
-                    'デフォルトコース',
-                    'https://www.dropbox.com/scl/fi/mobieph7imx5zf62g1kjz/.png?rlkey=es3o3x6e1lh2lh4dp5i182pp5&st=nx6x5uhj&raw=1',
-                    '小顔になりたい、頭痛、眠れない、<br>ブライダルやイベントまで体をスッキリさせたいとお悩みの方に！！',
-                    '￥11,000~',
-                    '60分'
-                );
-            } else if (treatmentId === 'treatment89') {
-                treatmentText.innerHTML = createTreatmentContent(
-                    'オイルコース',
-                    'https://www.dropbox.com/scl/fi/mobieph7imx5zf62g1kjz/.png?rlkey=es3o3x6e1lh2lh4dp5i182pp5&st=nx6x5uhj&raw=1',
-                    '小顔になりたい、頭痛、眠れない、<br>ブライダルやイベントまで体をスッキリさせたいとお悩みの方に！！',
-                    '￥11,000~',
-                    '90分'
-                );
-            } else if (treatmentId === 'treatment99') {
-                treatmentText.innerHTML = createTreatmentContent(
-                    'よもぎ蒸し',
-                    'https://www.dropbox.com/scl/fi/317fex5nvn4l8se74jjd5/.png?rlkey=zc1irgbsuss0e3ewzu7r0p4ir&st=vpac9o0g&raw=1',
-                    'デトックス＆リフレッシュ!!<br>冷え、肩こり、体の不調を感じている方に、身体が温まりぽかぽか心地いい♡',
-                    '￥3,500~',
-                    '30分'
-                );
-            } else if (treatmentId === 'treatment109') {
-                treatmentText.innerHTML = createTreatmentContent(
-                    'よもぎ蒸し',
-                    'https://www.dropbox.com/scl/fi/317fex5nvn4l8se74jjd5/.png?rlkey=zc1irgbsuss0e3ewzu7r0p4ir&st=vpac9o0g&raw=1',
-                    'デトックス＆リフレッシュ!!<br>冷え、肩こり、体の不調を感じている方に、身体が温まりぽかぽか心地いい♡',
-                    '￥3,500~',
-                    '50分'
-                );
-            } else if (treatmentId === 'treatment119') {
-                treatmentText.innerHTML = createTreatmentContent(
-                    '顔タイプ診断',
-                    'https://www.dropbox.com/scl/fi/7pmkc1vq5usp2lygf3b3h/.png?rlkey=b3ta3r6qpqfc9f3qiom78jkie&st=kd19l196&raw=1',
-                    'AIでは判断できない、自分の似合うファッションやヘアスタイルを知り、魅力的に輝くあなたへ💖<br>お洋服選びが楽しくなる✨',
-                    '￥9,000',
+                    'お試しホワイトニング-オープン記念 初回無料体験',
+                    'https://www.dropbox.com/scl/fi/1zk418g6nck1szeavm6si/imgi_32_C0dsadsa50005694.png?rlkey=1ir3k0vmpc0tuputyz8qwzbcm&st=210axu5o&raw=1',
+                    '体験後に口コミ入力&次回ご予約&お会計をしていただける方は、8分×2回照射を無料でお試しできます♪※サロン用ジェル、セルフでの施術。【流れ】初回カウンセリング&説明 30分→ 8分×2回照射',
+                    '￥0',
                     '120分'
+                );
+            } else if (treatmentId === 'treatment7') {
+                treatmentText.innerHTML = createTreatmentContent(
+                    'お手軽コース',
+                    'https://www.dropbox.com/scl/fi/wmlusmnxq3v45zq8kcmnq/imgi_34_C050005dsadsa955.png?rlkey=q5gf0y4xe7jt3y2fxo332kg59&st=vdy1t8ji&raw=1',
+                    'お手軽コースで完璧な美白に最短で♪',
+                    '￥4,800円〜',
+                    '60分'
+                );
+            } else if (treatmentId === 'treatment8') {
+                treatmentText.innerHTML = createTreatmentContent(
+                    '特別コース',
+                    'https://www.dropbox.com/scl/fi/wmlusmnxq3v45zq8kcmnq/imgi_34_C050005dsadsa955.png?rlkey=q5gf0y4xe7jt3y2fxo332kg59&st=vdy1t8ji&raw=1',
+                    '導入キャンペーン中！お得価格で利用いただけます。回数を重ねることで本来の白さになります。',
+                    '￥7,500円〜',
+                    '90分'
                 );
             } else {
                 treatmentText.innerHTML = '';

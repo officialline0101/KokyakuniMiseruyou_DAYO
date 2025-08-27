@@ -2210,10 +2210,11 @@
 
             // 表示する時間帯のリスト（09:00から17:00までの15分刻み）
             const times = [
-                '10:00', '10:30', '11:00', '11:30',
-                '12:00', '12:30', '13:00', '13:30',
-                '14:00', '14:30', '15:00', '15:30',
-                '16:00'
+                '08:30', '09:00', '09:30', '10:00',
+                '10:30', '11:00', '11:30', '12:00',
+                '12:30', '13:00', '13:30', '14:00',
+                '14:30', '15:00', '15:30', '16:00',
+                '16:30', '17:00', '17:30', '18:00',
             ];
 
             // カレンダーに行がまだない場合、時間ごとに新しい行を作成
@@ -2268,6 +2269,39 @@
                 for (let j = 0; j < times.length; j++) {
                     const cell = table.rows[j].cells[i + 1];
 
+    // 月曜(1)と木曜(4)は常に✕
+    if (day.getDay() === 1 || day.getDay() === 4) {
+        cell.textContent = '✕';
+        cell.classList.add('unavailable');
+        continue;
+    }
+
+    // 日曜(0)の 17:00〜19:00 は✕
+    if (day.getDay() === 0) {
+        const hour = parseInt(times[j].split(':')[0], 10);
+        const minute = parseInt(times[j].split(':')[1], 10);
+        const slotTime = hour + minute / 60; // 17.0, 17.5 などの形で比較できる
+
+        if (slotTime >= 17 && slotTime < 19) {
+            cell.textContent = '✕';
+            cell.classList.add('unavailable');
+            continue;
+        }
+    }
+
+// 月(1)〜金(5) ＆ 日(0) の 08:00〜08:59 は✕
+if ((day.getDay() >= 1 && day.getDay() <= 5) || day.getDay() === 0) {
+    const hour = parseInt(times[j].split(':')[0], 10);
+    const minute = parseInt(times[j].split(':')[1], 10);
+    const slotTime = hour + minute / 60;
+
+    if (slotTime >= 8 && slotTime < 9) {
+        cell.textContent = '✕';
+        cell.classList.add('unavailable');
+        continue;
+    }
+}
+
                     // すでにセルが✕の場合はスキップする
                     if (cell.textContent === '✕') {
                         continue;
@@ -2283,17 +2317,6 @@
 
                     // メニュー時間と訪問回数の時間を合計して、終了時間を設定
                     slotEnd.setMinutes(slotStart.getMinutes() + menuDuration + visitDuration + irradiationsDuration);
-
-                    // 18時以降に終了する予約を不可にする (17:30は可)
-                    if (slotEnd.getHours() === 16 && slotEnd.getMinutes() > 0) {
-                        cell.textContent = '✕';
-                        cell.classList.add('unavailable');
-                        continue;
-                    } else if (slotEnd.getHours() > 16) {
-                        cell.textContent = '✕';
-                        cell.classList.add('unavailable');
-                        continue;
-                    }
 
                     // ここで終了時間を使った条件処理を行う
                     // 例えば、リアルタイムで既に過ぎた時間帯は×にする
@@ -2335,11 +2358,6 @@
                     }
                     // 営業日で、指定されている時間以外の時間は×
                     else if (businessEventTimes.length > 0) {
-                        cell.textContent = '✕';
-                        cell.classList.add('unavailable');
-                    }
-                    // 日曜日で、営業日ではない場合
-                    else if (slotStart.getDay() === 0 && !isBusinessDay && businessEventTimes.length === 0) {
                         cell.textContent = '✕';
                         cell.classList.add('unavailable');
                     }
